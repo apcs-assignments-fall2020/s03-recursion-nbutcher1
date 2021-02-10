@@ -18,7 +18,16 @@ public class MyMain {
     // This method checks if a String is a palindrome
     // (e.g. "racecar", "madam"), recursively
     public static boolean isPalindrome(String str) { 
-        
+        if (str.length() == 0 || str.length() == 1)
+        {
+            return true;
+        }
+        if(str.charAt(0) == str.charAt(str.length()-1))
+        {
+            str = str.substring(1,str.length()-1);
+            return isPalindrome(str);
+        }
+        return false;
     }
 
     // This method returns the orignal string reversed;
